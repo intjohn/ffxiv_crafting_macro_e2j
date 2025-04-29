@@ -1,0 +1,19 @@
+{
+  "name": "ffxiv_crafting_macro_e2j",
+  "version": "1.0.0",
+  "description": "A simple web application for translating texts between English and Japanese using a CSV file for word pairs.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "live-server public"
+  },
+  "dependencies": {
+    "csv-parser": "^3.0.0"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "webpack": "^5.99.7",
+    "webpack-cli": "^6.0.1"
+  },
+  "author": "",
+  "license": "ISC"
+}

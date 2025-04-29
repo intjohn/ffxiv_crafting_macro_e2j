@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Translation Site</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Text Translation</h1>
+        <textarea id="inputText" placeholder="Enter text here..."></textarea>
+        <div class="action-bar">
+          <div class="toggle-container">
+              <label for="languageToggle">Translate from:</label>
+              <input type="radio" name="languageOption" value="e2j" checked>English to Japanese</option>
+              <input type="radio" name="languageOption" value="j2e">Japanese to English</option>
+          </div>
+          <button id="translateButton" disabled>Translate</button>
+        </div>
+        <textarea id="outputText" placeholder="Translated text will appear here..." readonly></textarea>
+    </div>
+    <script type="module" src="./bundle.js"></script>
+</body>
+</html>
