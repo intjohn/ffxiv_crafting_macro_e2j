@@ -1,4 +1,8 @@
+/micon bkiss emote
 /ac Manipulation
 /ac Manipulation <wait.3>
 /ac "Prudent Touch"
 /ac "Prudent Touch" <wait.2>
+/action 倹約作業 <se.3>
+/ac マスターズメンド
+/p お待たせしました
