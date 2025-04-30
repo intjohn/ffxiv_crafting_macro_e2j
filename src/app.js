@@ -38,6 +38,8 @@ function translateText(inputText, isE2J = true) {
 
 loadTranslations();
 
+console.log('Translations loaded successfully');
+
 // Event listeners for user interactions
 document.addEventListener('DOMContentLoaded', () => {
   const inputTextArea = document.getElementById('inputText');
