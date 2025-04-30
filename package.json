@@ -4,15 +4,13 @@
   "description": "A simple web application for translating texts between English and Japanese using a CSV file for word pairs.",
   "main": "src/app.js",
   "scripts": {
-    "start": "live-server public"
-  },
-  "dependencies": {
-    "csv-parser": "^3.0.0"
+    "build": "webpack --mode=production",
+    "start": "webpack serve --open --mode=development"
   },
   "devDependencies": {
-    "live-server": "^1.2.1",
     "webpack": "^5.99.7",
-    "webpack-cli": "^6.0.1"
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1"
   },
   "author": "",
   "license": "ISC"

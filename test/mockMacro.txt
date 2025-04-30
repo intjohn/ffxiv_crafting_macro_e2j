@@ -1,0 +1,4 @@
+/ac Manipulation
+/ac Manipulation <wait.3>
+/ac "Prudent Touch"
+/ac "Prudent Touch" <wait.2>

@@ -8,13 +8,12 @@ function loadTranslations() {
     .forEach(([e, j]) => {
       if (e && j) {
           tEJ.set(e, j);
-          tJE.set(j, e);
+          tJE.set(j, e.indexOf(' ') === -1 ? e : `"${e}"`);
       }
     });
 }
 
-const parserPlaceholder = new RegExp(/(\/(?:ac|action)\s+)(.*)(?=(\s+<[a-z.1-9]+>))/);
-const parserActionOnly = new RegExp(/(\/(?:ac|action)\s+)(.*)$/);
+const actionParser = new RegExp(/(\/(?:ac|action)\s+)(.*(?=(\s+<[a-z.1-9]+>))|.*(?!>))/);
 
 // Function to translate text
 function translateText(inputText, isE2J = true) {
@@ -23,12 +22,12 @@ function translateText(inputText, isE2J = true) {
     .split('\n')
     .map(line => {
       line = line.trim();
-      const actionParser = line.endsWith('>') ? parserPlaceholder : parserActionOnly;
       const parseResult = actionParser.exec(line);
       if (parseResult) {
         const [_match, head, action, tail] = parseResult;
-        if (tMap.has(action)) {
-          const translatedAction = tMap.get(action);
+        const actionNoQuotes = action.replace(/['"]/g, '');
+        if (tMap.has(actionNoQuotes)) {
+          const translatedAction = tMap.get(actionNoQuotes);
           return `${head}${translatedAction}${tail || ''}`;
         }
       }
@@ -41,16 +40,16 @@ loadTranslations();
 
 // Event listeners for user interactions
 document.addEventListener('DOMContentLoaded', () => {
-    const inputTextArea = document.getElementById('inputText');
-    const outputTextArea = document.getElementById('outputText');
-    const translateButton = document.getElementById('translateButton');
-    const languageToggle = document.querySelector('input[type="radio"][name="languageOption"]:checked');
+  const inputTextArea = document.getElementById('inputText');
+  const outputTextArea = document.getElementById('outputText');
+  const translateButton = document.getElementById('translateButton');
 
-    translateButton.addEventListener('click', () => {
-        const inputText = inputTextArea.value;
-        const toJapanese = languageToggle.value === 'e2j';
-        const translatedText = translateText(inputText, toJapanese);
-        outputTextArea.value = translatedText;
-    });
-    translateButton.disabled = false; // Enable the button after loading translations
+  translateButton.addEventListener('click', () => {
+    const languageToggle = document.querySelector('input[type="radio"][name="languageOption"]:checked');
+    const inputText = inputTextArea.value;
+    const toJapanese = languageToggle.value === 'e2j';
+    const translatedText = translateText(inputText, toJapanese);
+    outputTextArea.value = translatedText;
+  });
+  translateButton.disabled = false; // Enable the button after loading translations
 });
