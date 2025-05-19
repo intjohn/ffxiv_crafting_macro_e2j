@@ -1,3 +1,6 @@
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import Header from './header';
 import translations from '../assets/translations.json';
 
 const tEJ = new Map();
@@ -55,3 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   translateButton.disabled = false; // Enable the button after loading translations
 });
+
+const headerRoot = createRoot(document.getElementById('header'));
+headerRoot.render(<Header />);

@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FFXIV Crafting Macro Translate</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./public/styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>FFXIV Crafting Macro Translate</h1>
+        <div id="header"></div>
         <textarea id="inputText" placeholder="Enter text here..."></textarea>
         <div class="action-bar">
           <div class="toggle-container">
@@ -20,6 +20,6 @@
         </div>
         <textarea id="outputText" placeholder="Translated text will appear here..." readonly></textarea>
     </div>
-    <script type="module" src="./bundle.js"></script>
+    <script type="module" src="./src/app.jsx"></script>
 </body>
 </html>
