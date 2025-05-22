@@ -33,10 +33,13 @@ jobs:
       with:
         node-version: 22.x
 
+    - name: Use pnpm
+      uses: pnpm/action-setup@v4
+
     - name: Build
       run: |
-        npm ci
-        npm run build
+        pnpm i
+        pnpm run build
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3

@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: .875rem;
+}
+
+.inputField {
+  padding: 24px 24px 12px; /* To align with MUI tab panel */
+}
+
+.buttonRow {
+  text-align: center;
+}

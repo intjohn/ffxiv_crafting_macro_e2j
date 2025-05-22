@@ -1,0 +1,15 @@
+/ac 真価 <wait.3>
+/ac ヴェネレーション <wait.2>
+/ac 下地作業 <wait.3>
+/ac 下地作業 <wait.3>
+/ac 下地作業 <wait.3>
+/ac 倹約作業 <wait.3>
+/ac パーフェクトメンド <wait.3>
+/ac ヴェネレーション <wait.2>
+/ac 長期倹約 <wait.2>
+/ac 下地作業 <wait.3>
+/ac 下地作業 <wait.3>
+/ac 下地作業 <wait.3>
+/ac ヴェネレーション <wait.2>
+/ac 下地作業 <wait.3>
+/echo ↓マクロ[2]へ <se.12>

@@ -1,25 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FFXIV Crafting Macro Translate</title>
-    <link rel="stylesheet" href="./public/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FFXIV Crafting Macro Translate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+  />
+  <script defer type="module" src="./src/app.jsx"></script>
 </head>
 <body>
-    <div class="container">
-        <div id="header"></div>
-        <textarea id="inputText" placeholder="Enter text here..."></textarea>
-        <div class="action-bar">
-          <div class="toggle-container">
-              <label for="languageToggle">Translate from:</label>
-              <input type="radio" name="languageOption" value="e2j" checked>English to Japanese</option>
-              <input type="radio" name="languageOption" value="j2e">Japanese to English</option>
-          </div>
-          <button id="translateButton" disabled>Translate</button>
-        </div>
-        <textarea id="outputText" placeholder="Translated text will appear here..." readonly></textarea>
-    </div>
-    <script type="module" src="./src/app.jsx"></script>
 </body>
 </html>

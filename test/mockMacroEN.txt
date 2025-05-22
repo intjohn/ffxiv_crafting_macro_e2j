@@ -1,0 +1,14 @@
+/ac "Reflect" <wait.3>
+/ac "Manipulation" <wait.2>
+/ac "Waste Not II" <wait.2>
+/ac "Veneration" <wait.2>
+/ac "Groundwork" <wait.3>
+/ac "Groundwork" <wait.3>
+/ac "Groundwork" <wait.3>
+/ac "Groundwork" <wait.3>
+/ac "Veneration" <wait.2>
+/ac "Groundwork" <wait.3>
+/ac "Groundwork" <wait.3>
+/ac "Groundwork" <wait.3>
+/ac "Groundwork" <wait.3>
+/echo Macro finished (1/1) <se.1>

@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "Assets/*": ["./assets/*"],
+      "MuiBarrel": ["./src/muiBarrel"],
+      "Util": ["./src/util"]
+    }
+  },
+  "exclude": [
+    "**/node_modules",
+    "**/dist"
+  ],
+}
