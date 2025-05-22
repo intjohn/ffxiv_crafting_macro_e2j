@@ -1,4 +1,6 @@
-const actionParser = new RegExp(/(\/(?:ac|action)\s+)(.*(?=(\s+<[a-z.1-9]+>))|.*(?!>))/);
+const actionParser = new RegExp(
+  /(\/(?:ac|action)\s+)(.*(?=(\s+<[a-z.1-9]+>))|.*(?!>))/,
+);
 
 class MacroParser {
   #en;
@@ -14,13 +16,11 @@ class MacroParser {
     this.#fr = fr;
     this.#de = de;
 
-    [en, jp, fr, de]
-      .filter(Boolean)
-      .forEach(actions => {
-        actions.forEach((action, index) => {
-          this.#dict.set(action, index);
-        });
+    [en, jp, fr, de].filter(Boolean).forEach((actions) => {
+      actions.forEach((action, index) => {
+        this.#dict.set(action, index);
       });
+    });
   }
 
   #composeLine(line, translation) {
@@ -28,31 +28,38 @@ class MacroParser {
       return line;
     }
     const translated = translation[line[1]];
-    const quoted = translated.indexOf(' ') !== -1 ? `"${translated}"` : translated;
+    const quoted =
+      translated.indexOf(' ') !== -1 ? `"${translated}"` : translated;
     return `${line[0]}${quoted}${line[2] || ''}`;
   }
 
   async parse(inputMacro) {
-    const lines = inputMacro
-      .split('\n')
-      .map(line => {
-        line = line.trim();
-        const parseResult = actionParser.exec(line);
-        if (parseResult) {
-          const [_match, head, action, tail] = parseResult;
-          const actionNoQuotes = action.replace(/['"]/g, '');
-          if (this.#dict.has(actionNoQuotes)) {
-            return [head, this.#dict.get(actionNoQuotes), tail];
-          }
+    const lines = inputMacro.split('\n').map((line) => {
+      line = line.trim();
+      const parseResult = actionParser.exec(line);
+      if (parseResult) {
+        const [_match, head, action, tail] = parseResult;
+        const actionNoQuotes = action.replace(/['"]/g, '');
+        if (this.#dict.has(actionNoQuotes)) {
+          return [head, this.#dict.get(actionNoQuotes), tail];
         }
-        return line;
-      });
-    
+      }
+      return line;
+    });
+
     return {
-      en: this.#en && lines.map(line => this.#composeLine(line, this.#en)).join('\n'),
-      jp: this.#jp && lines.map(line => this.#composeLine(line, this.#jp)).join('\n'),
-      fr: this.#fr && lines.map(line => this.#composeLine(line, this.#fr)).join('\n'),
-      de: this.#de && lines.map(line => this.#composeLine(line, this.#de)).join('\n'),
+      en:
+        this.#en &&
+        lines.map((line) => this.#composeLine(line, this.#en)).join('\n'),
+      jp:
+        this.#jp &&
+        lines.map((line) => this.#composeLine(line, this.#jp)).join('\n'),
+      fr:
+        this.#fr &&
+        lines.map((line) => this.#composeLine(line, this.#fr)).join('\n'),
+      de:
+        this.#de &&
+        lines.map((line) => this.#composeLine(line, this.#de)).join('\n'),
     };
   }
 }

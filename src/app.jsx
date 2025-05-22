@@ -13,5 +13,5 @@ macroTransRoot.render(
         <MacroTrans {...getTranslations()} />
       </Paper>
     </Container>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

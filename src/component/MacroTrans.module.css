@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  row-gap: .875rem;
+  row-gap: 0.875rem;
 }
 
 .inputField {

@@ -11,7 +11,10 @@ const MacroTabs = ({ en, jp, fr, de }) => {
   return (
     <Box component="section">
       <TabContext value={value}>
-        <TabList onChange={handleChange} aria-label="Choose Macro in preferred language">
+        <TabList
+          onChange={handleChange}
+          aria-label="Choose Macro in preferred language"
+        >
           <Tab label="EN" value="1" />
           <Tab label="JP" value="2" />
           <Tab label="FR" value="3" />

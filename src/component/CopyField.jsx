@@ -29,7 +29,11 @@ const CopyField = ({ content, ...rest }) => {
                 onClick={handleCopy}
                 disabled={!content}
               >
-                {copied ? <Done fontSize="small" /> : <ContentCopy fontSize="small" />}
+                {copied ? (
+                  <Done fontSize="small" />
+                ) : (
+                  <ContentCopy fontSize="small" />
+                )}
               </IconButton>
             </InputAdornment>
           ),
@@ -44,7 +48,7 @@ const CopyField = ({ content, ...rest }) => {
       sx={{
         '& .MuiInputBase-root': {
           alignItems: 'baseline',
-        }
+        },
       }}
       {...rest}
     />

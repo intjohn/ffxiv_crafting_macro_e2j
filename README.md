@@ -43,27 +43,33 @@ ffxiv_crafting_macro_e2j/
 ## Setup Instructions
 
 1. Clone the repository:
+
    ```
    git clone <repository-url>
    ```
 
 2. Navigate to the project directory:
+
    ```
    cd ffxiv_crafting_macro_e2j
    ```
 
 3. Install the required dependencies:
+
    ```
    pnpm i
    ```
 
 4. Run a dev server:
+
    ```
    pnpm run dev
    ```
+
    Then open the prompted URL in the browser.
 
 5. Alternatively run a production preview server:
+
    ```
    pnpm run preview
    ```

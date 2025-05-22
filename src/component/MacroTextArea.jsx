@@ -5,7 +5,7 @@ const MacroTextArea = styled(TextField)(() => ({
     fontFamily: 'monospace',
     fontSize: '.8rem',
     lineHeight: '1.05rem',
-  }
+  },
 }));
 
 export default MacroTextArea;

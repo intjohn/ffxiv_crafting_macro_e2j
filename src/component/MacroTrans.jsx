@@ -7,7 +7,10 @@ import styles from './MacroTrans.module.css';
 
 const MacroTrans = ({ en, jp, fr, de }) => {
   const inputRef = useRef(null);
-  const parser = useMemo(() => new MacroParser({ en, jp, fr, de }), [en, jp, fr, de]);
+  const parser = useMemo(
+    () => new MacroParser({ en, jp, fr, de }),
+    [en, jp, fr, de],
+  );
   const [outputMacros, setOutputMacros] = React.useState('');
 
   const handleTranslate = async () => {
