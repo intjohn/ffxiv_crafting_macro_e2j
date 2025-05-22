@@ -14,7 +14,7 @@ This project is a simple web application that allows users to translate FFXIV cr
 
 ## Project Structure
 
-```
+```text
 ffxiv_crafting_macro_e2j/
 ├── assets/
 │   └── crafterActions.json # Action names in 4 languages
@@ -44,25 +44,25 @@ ffxiv_crafting_macro_e2j/
 
 1. Clone the repository:
 
-   ```
+   ```sh
    git clone <repository-url>
    ```
 
 2. Navigate to the project directory:
 
-   ```
+   ```sh
    cd ffxiv_crafting_macro_e2j
    ```
 
 3. Install the required dependencies:
 
-   ```
+   ```sh
    pnpm i
    ```
 
 4. Run a dev server:
 
-   ```
+   ```sh
    pnpm run dev
    ```
 
@@ -70,12 +70,12 @@ ffxiv_crafting_macro_e2j/
 
 5. Alternatively run a production preview server:
 
-   ```
+   ```sh
    pnpm run preview
    ```
 
 6. Build (default into `./dist` folder) for CI/CD purpose
-   ```
+   ```sh
    pnpm run build
    ```
 
