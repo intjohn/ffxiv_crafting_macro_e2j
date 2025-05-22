@@ -1,10 +1,6 @@
 import fs from 'fs';
-import path, { dirname } from 'path';
-import { fileURLToPath } from 'url';
+import path from 'path';
 import jsdom from 'jsdom';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 const getUrl = locale => 
   `https://${locale}.finalfantasyxiv.com/crafting_gathering_guide/carpenter/`;
@@ -37,8 +33,8 @@ await Promise.all(
 
 try {
   fs.writeFileSync(
-    path.resolve(__dirname, '../assets/crafterActions.json'),
-    JSON.stringify(translations, null, 2),
+    path.resolve(import.meta.dirname, '../assets/crafterActions.json'),
+    JSON.stringify(translations, locales.sort(), 2),
     'utf-8'
   );
 } catch (err) {
