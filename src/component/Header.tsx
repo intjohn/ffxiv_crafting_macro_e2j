@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography, Box } from 'MuiBarrel';
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <Box component="header" sx={{ marginBottom: '1rem' }}>
       <Typography variant="h5">FFXIV Crafting Macro Translate</Typography>

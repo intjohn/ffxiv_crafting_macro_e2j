@@ -24,7 +24,7 @@ export default defineConfig([
           ignoreRestSiblings: true,
         },
       ],
-    }
+    },
   },
   {
     files: ['**/*.{js,mjs,cjs,jsx}'],

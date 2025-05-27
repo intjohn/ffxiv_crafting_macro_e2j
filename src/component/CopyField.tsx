@@ -2,14 +2,21 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { InputAdornment, IconButton, Done, ContentCopy } from 'MuiBarrel';
 import MacroTextArea from './MacroTextArea';
 
-const CopyField = ({ content, ...rest }) => {
+interface CopyFieldProps {
+  content?: string;
+  [key: string]: any;
+}
+
+const CopyField: React.FC<CopyFieldProps> = ({ content, ...rest }) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = useCallback(() => {
-    navigator.clipboard.writeText(content).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000); // Reset copied state after 2 seconds
-    });
+    if (content) {
+      navigator.clipboard.writeText(content).then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000); // Reset copied state after 2 seconds
+      });
+    }
   }, [content]);
 
   useEffect(() => setCopied(false), [content]);
@@ -44,7 +51,6 @@ const CopyField = ({ content, ...rest }) => {
       fullWidth
       multiline
       rows={15}
-      readOnly
       sx={{
         '& .MuiInputBase-root': {
           alignItems: 'baseline',

@@ -4,16 +4,18 @@ import { MacroParser } from 'Util';
 import MacroTextArea from './MacroTextArea';
 import MacroTabs from './MacroTabs';
 import styles from './MacroTrans.module.css';
+import type { Translations, TranslatedMacro } from '../types/common';
 
-const MacroTrans = ({ en, jp, fr, de }) => {
-  const inputRef = useRef(null);
+const MacroTrans: React.FC<Translations> = ({ en, jp, fr, de }) => {
+  const inputRef = useRef<HTMLTextAreaElement>(null);
   const parser = useMemo(
     () => new MacroParser({ en, jp, fr, de }),
     [en, jp, fr, de],
   );
-  const [outputMacros, setOutputMacros] = React.useState('');
+  const [outputMacros, setOutputMacros] = React.useState<TranslatedMacro>({});
 
   const handleTranslate = async () => {
+    if (!inputRef.current) return;
     const inputMacro = inputRef.current.value;
     setOutputMacros(await parser.parse(inputMacro));
   };

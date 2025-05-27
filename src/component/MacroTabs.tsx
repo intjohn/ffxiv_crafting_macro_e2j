@@ -1,12 +1,16 @@
 import React, { useState, useCallback, memo } from 'react';
 import { TabContext, TabList, Tab, TabPanel, Box } from 'MuiBarrel';
 import CopyField from './CopyField';
+import type { TranslatedMacro } from '../types/common';
 
-const MacroTabs = ({ en, jp, fr, de }) => {
+const MacroTabs: React.FC<TranslatedMacro> = ({ en, jp, fr, de }) => {
   const [value, setValue] = useState('1');
-  const handleChange = useCallback((_event, newValue) => {
-    setValue(newValue);
-  }, []);
+  const handleChange = useCallback(
+    (_event: React.SyntheticEvent, newValue: string) => {
+      setValue(newValue);
+    },
+    [],
+  );
 
   return (
     <Box component="section">

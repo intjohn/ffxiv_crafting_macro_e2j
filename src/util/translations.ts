@@ -1,8 +1,9 @@
 import { jp, fr, de, na } from 'Assets/crafterActions.json';
+import type { Translations } from '../types/common';
 
-let translationsObj;
+let translationsObj: Translations | undefined;
 
-const loadTranslations = () => {
+const loadTranslations = (): void => {
   translationsObj = {
     en: na,
     jp,
@@ -11,11 +12,11 @@ const loadTranslations = () => {
   };
 };
 
-const getTranslations = () => {
+const getTranslations = (): Translations => {
   if (!translationsObj) {
     loadTranslations();
   }
-  return translationsObj;
+  return translationsObj!;
 };
 
 export { getTranslations };
