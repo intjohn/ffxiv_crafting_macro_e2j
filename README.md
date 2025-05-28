@@ -20,10 +20,13 @@ ffxiv_crafting_macro_e2j/
 │   └── crafterActions.json # Action names in 4 languages
 ├── src/
 │   ├── component/          # React components
+│   │   └── __tests__/      # Test files for components
 │   ├── muiBarrel/          # Barrel imports of MaterialUI
+│   ├── test/               # Temporary place for testing setup
 │   ├── util/               # Non-React component codes
+│   │   └── __tests__/      # Test files for utils
 │   └── app.js              # Main JavaScript logic for the application
-├── test/                   # Testing codes, so far only data
+├── mockData/               # Some mock macros
 ├── tool/
 │   └── actionCrawler.js    # Update assets from the FFXIV official site
 ├── index.html              # Main entry point of the application
@@ -37,6 +40,8 @@ ffxiv_crafting_macro_e2j/
 - MaterialUI
 - CSSModule
 - Vite
+- Vitest
+- Testing Library for React
 - pnpm
 - Github Action
 
@@ -75,8 +80,14 @@ ffxiv_crafting_macro_e2j/
    ```
 
 6. Build (default into `./dist` folder) for CI/CD purpose
+
    ```sh
    pnpm run build
+   ```
+
+7. Run tests
+   ```sh
+   pnpm test
    ```
 
 ## Translation Data Sources
