@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from 'react';
+import React, { useMemo, useRef, useCallback } from 'react';
 import { Button } from 'MuiBarrel';
 import { MacroParser } from 'Util';
 import MacroTextArea from './MacroTextArea';
@@ -14,11 +14,11 @@ const MacroTrans: React.FC<Translations> = ({ en, jp, fr, de }) => {
   );
   const [outputMacros, setOutputMacros] = React.useState<TranslatedMacro>({});
 
-  const handleTranslate = async () => {
+  const handleTranslate = useCallback(async () => {
     if (!inputRef.current) return;
     const inputMacro = inputRef.current.value;
     setOutputMacros(await parser.parse(inputMacro));
-  };
+  }, [parser]);
 
   return (
     <div className={styles.container}>

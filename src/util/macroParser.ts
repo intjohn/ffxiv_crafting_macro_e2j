@@ -56,18 +56,10 @@ class MacroParser {
     });
 
     return {
-      en:
-        this.#en &&
-        lines.map((line) => this.#composeLine(line, this.#en)).join('\n'),
-      jp:
-        this.#jp &&
-        lines.map((line) => this.#composeLine(line, this.#jp)).join('\n'),
-      fr:
-        this.#fr &&
-        lines.map((line) => this.#composeLine(line, this.#fr)).join('\n'),
-      de:
-        this.#de &&
-        lines.map((line) => this.#composeLine(line, this.#de)).join('\n'),
+      en: lines.map((line) => this.#composeLine(line, this.#en)).join('\n'),
+      jp: lines.map((line) => this.#composeLine(line, this.#jp)).join('\n'),
+      fr: lines.map((line) => this.#composeLine(line, this.#fr)).join('\n'),
+      de: lines.map((line) => this.#composeLine(line, this.#de)).join('\n'),
     };
   }
 }

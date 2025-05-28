@@ -36,13 +36,29 @@ await Promise.all(
   }),
 );
 
-try {
-  fs.writeFileSync(
-    path.resolve(import.meta.dirname, '../assets/crafterActions.json'),
-    JSON.stringify(translations, locales.sort(), 2),
-    'utf-8',
-  );
-  console.log('Translation file written successfully');
-} catch (err) {
-  console.error('Error writing translation file', err);
+if (
+  translations.na.length === translations.jp.length &&
+  translations.na.length === translations.fr.length &&
+  translations.na.length === translations.de.length
+) {
+  try {
+    fs.writeFileSync(
+      path.resolve(import.meta.dirname, '../assets/crafterActions.json'),
+      JSON.stringify(translations, locales.sort(), 2),
+      'utf-8',
+    );
+    console.log('Translation file written successfully');
+  } catch (err) {
+    console.error('Error writing translation file', err);
+  }
+} else {
+  console.error('Translations are not consistent');
+  console.error('');
+
+  locales.forEach((locale) => {
+    console.error(`${locale}: ${translations[locale].length}`);
+    console.error('--------------------------------');
+    console.error(translations[locale]);
+    console.error('');
+  });
 }
